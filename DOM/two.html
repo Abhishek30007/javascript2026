@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second HTML file</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const create_div = document.createElement("div");
+    console.log(create_div);
+    create_div.innerHTML = "this is the second file";
+    create_div.setAttribute("class", "second-div");
+    create_div.setAttribute("id", "second-div-id");
+    create_div.style.backgroundColor = "yellow";
+    create_div.style.width = "200px";
+    create_div.style.height = "200px";
+    // abhi tak div memeory me create hua hai but wo document me add nhi hua hai
+    const body = document.querySelector("body")
+    body.appendChild(create_div);
+</script>
+</html>

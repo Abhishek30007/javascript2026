@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+// this tells about the document type and the version of HTML used .
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript project</title>
+</head>
+<body>
+    <div class="bg-clr">
+        <h1>DOM Manipulation</h1>
+        <h2 class="cls2">Subheading</h2>
+        <p>Learning about the JAVASCRIPT topics and their applications in web development.</p>
+    </div>
+    <div class ="twoclass">
+      <div class="child">child1 </div>
+      <div class="child">child2</div>
+      <div class="child">child3</div>
+      <div class="child">child4</div>
+    </div>
+</body>
+<script>
+   // document.querySelector(".twoclass").style.backgroundColor = "yellow";
+   const elmt = document.querySelector(".twoclass");
+  // console.log(elmt.children);
+   const arry = Array.from(elmt.children);
+
+
+//    console.log(elmt.firstElementChild.innerHTML);
+//    console.log(elmt.lastElementChild.innerText);
+
+
+    //    arry.forEach((element) => {
+    //     element.style.backgroundColor = "yellow";
+    //    });   
+
+
+   const children = elmt.children;
+//   const child = document.querySelector(".child");
+//     console.log(child.parentElement.innerHTML);
+//     console.log(child.nextElementSibling.innerHTML);
+
+
+//child nodes
+   console.log("child nodes" , children.childNodes);
+  console.log("nodes" , elmt.childNodes); // gives the list of all the child
+  //  nodes including text nodes and comment nodes
+
+
+</script>
+</html>
