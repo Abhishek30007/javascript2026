@@ -54,7 +54,21 @@
 
 
 // now to apply the remove function
+
+//in part 1 we were removing any nodes inside the images 
+// but if we want to remove a particularly images only then 
       const images = document.querySelector('#images')
-      console.log(images)
+     // console.log(images)
+     images.addEventListener('click',(e)=>{
+      console.log(e)
+     const tagname = e.target.tagName
+     console.log(tagname)
+     if(tagname === 'IMG'){
+       const toremove = e.target.parentNode
+      // console.log(toremove)
+      toremove.remove()
+     }
+     },false)
+
 </script>
 </html>
