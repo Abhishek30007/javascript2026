@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd part of DOM</title>
+</head>
+<body>
+
+    <div class="parent">
+        <ul class="list-name">
+            <input type="text" class="input-name" placeholder="enter name">
+        </ul>
+    </div>
+</body>
+
+       <script>
+ const ul = document.querySelector(".list-name");
+ const input = document.querySelector(".input-name");
+
+    function addlist(name){
+        const li = document.createElement("li");
+        li.innerHTML = `${name}`;
+     
+        li.style.width = "200px";
+        li.style.height = "20px";
+           li.style.backgroundColor = "yellow";
+        ul.appendChild(li);
+    }
+
+     input.addEventListener("change", () => {
+        addlist(input.value);
+     })
+
+     addlist("john");
+    addlist("doe");
+    addlist("smith");
+
+     console.log(ul.children); 
+
+
+    // now to edit a particular element we can use the index of that element 
+    const secondelmt = document.querySelector(".list-name :nth-child(2)");
+    secondelmt.style.backgroundColor = "red";
+    //using repalce with
+    const newli = document.createElement("li");
+    newli.innerHTML = "new name";
+    ul.replaceChild(newli, secondelmt);
+
+    // using remove child
+    const firstelmt = document.querySelector(".list-name :nth-child(1)");
+    ul.removeChild(firstelmt);
+       </script>
+</html>
