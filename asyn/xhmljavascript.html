@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <h1>Hello, World!</h1>
+</body>
+
+<script>
+    
+    //   XMLHttpRequest() -> this is a method that is used to create a new XMLHttpRequest object
+    // from which we can send request to the server
+    const xhr = new XMLHttpRequest(); // now this is an object of the XMLHttpRequest class
+    //  and we can use it to send requests to the server
+     const url = "https://jsonplaceholder.typicode.com/todos/1"; // this is the url to which we want to send the request
+    xhr.open('GET', url); // this is the method that is used to open a new connection to the server, 
+    // till it has not send back any data 
+
+xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    
+    if (xhr.readyState === 4) {
+        // the responseTest was in string format to make 
+        // it in OBJECT format we have to parse it using JSON.parse() method
+        const data = JSON.parse(this.responseText)
+        console.log(typeof data);
+        console.log(data.followers);
+    }
+}
+
+xhr.send();
+     
+    </script>
+</html>
